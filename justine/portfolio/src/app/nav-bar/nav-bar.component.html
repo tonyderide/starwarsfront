@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isnotHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'over'"
+      [opened]="(isHandset$ | async) === true">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/protheses">Prothèses</a>
+      <a mat-list-item routerLink="/moulages">Moulages</a>
+      <a mat-list-item routerLink="/editorial" >Editorial</a>
+      <a mat-list-item routerLink="/contact">contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="white" class="navbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div fxLayout="column" fxLayoutAlign="center center" >
+      <div id="title" xFlexAlign="center"> {{title}} </div>
+      <div *ngIf="isnotHandset$ | async" xFlexAlign="center">
+             <button mat-button routerLink="protheses">Prothèses</button>
+             <button mat-button routerLink="moulages">Moulages</button>
+             <button mat-button routerLink="editorial">Editorial</button>
+             <button mat-button routerLink="contact"><mat-icon>contacts</mat-icon>Contact</button>
+
+      </div>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

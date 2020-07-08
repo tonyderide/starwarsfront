@@ -1,0 +1,38 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar {
+  justify-content: space-between;
+}
+
+#title{
+  font-family: Roboto;
+  font-size: 2rem;
+}
+button{
+  margin: 0.5rem;
+  font-family: Roboto, cursive;
+  font-size: 2rem;
+}
+
+
+@media (max-width: 600px) {
+  #title{
+    font-family: Roboto;
+    font-size: 1rem;
+  }
+}
